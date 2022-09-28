@@ -7,16 +7,15 @@ width:900px;
 padding: 1.5rem 0;
 border-radius: 8px;
 
-position: absolute;
-top:350px;
-left:25%;
+margin-bottom:4rem;
 font-size:1.5rem;
 
+transform:translateX(500px);
 
 
 `;
 const Container = styled.div`
-position: relative;
+margin-top:15rem
 
 `
 export const Search = ({ cb = Function.prototype }) => {

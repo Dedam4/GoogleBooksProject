@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Search } from './Search';
 import { BooksList } from './BooksList';
+import { BookModal } from './BookModal';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { setRequest } from '../api/apiConfig'
@@ -18,7 +19,8 @@ export const Home = () => {
   const [books, setBooks] = useState([]);
   const [string, setString] = useState('');
 
-  const handleSearch = (str ) => {
+
+  const handleSearch = (str) => {
 
     setString(str);
 
@@ -28,9 +30,9 @@ export const Home = () => {
   }
 
   useEffect(() => {
-    if(string){
+    if (string) {
 
-      setRequest(string).then(data => data.items && setBooks(data.items)) 
+      setRequest(string).then(data => data.items && setBooks(data.items))
     }
 
   }, [string])
@@ -42,7 +44,8 @@ export const Home = () => {
       <Container >
 
         <Search cb={handleSearch} />
-        <BooksList books={books}/>
+        <BooksList books={books} />
+  
       </Container>
 
     </>
