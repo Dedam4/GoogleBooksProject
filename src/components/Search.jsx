@@ -6,16 +6,21 @@ const Input = styled.input`
 width:900px;
 padding: 1.5rem 0;
 border-radius: 8px;
-
-margin-bottom:4rem;
+margin: 0 auto;
 font-size:1.5rem;
 
 transform:translateX(500px);
+outline: none;
+
+&:focus {
+  outline: 1px solid blue;
+}
 
 
 `;
 const Container = styled.div`
-margin-top:15rem
+margin-top:15rem;
+
 
 `
 export const Search = ({ cb = Function.prototype }) => {

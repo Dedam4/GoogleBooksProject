@@ -14,18 +14,20 @@ padding: 0 2rem;
 export const BooksList = ({ books }) => {
 
 
-  if (!books.length) {
-    return <h2>Nothing</h2>
-  }
   return (
-    <Container>
-      {books.map((item) =>
+    <>
 
-        <Card key={item.id} volumeInfo={item.volumeInfo} {...item}  />
+      <Container>
+        {books.length ? 
+          books.map((item) =>
 
-      )}
-      
+            <Card key={item.id} volumeInfo={item.volumeInfo} {...item} />
 
-    </Container>
+            ) :  <h1>По вашему запросу ничего не  найдено</h1>
+          } 
+
+
+      </Container>
+    </>
   )
 }
